@@ -95,6 +95,8 @@ fun main(){
         }
     println(respuestaMap)
     val respuestaMapDos = arregloDinamico.map{ it + 15 }
+    println(respuestaMapDos)
+
 
 
 
