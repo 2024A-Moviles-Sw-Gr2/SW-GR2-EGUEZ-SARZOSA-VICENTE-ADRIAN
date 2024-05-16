@@ -47,7 +47,34 @@ fun main(){
     // calcularSueldo(sueldo, tasa, bonoEspecial)
     calcularSueldo(10.00, bonoEspecial = 20.00)
     calcularSueldo(bonoEspecial = 20.00, sueldo=10.00, tasa=14.00)
+    // Uso de clases
+    val sumaUno = Suma(1,1) // new Suma(1,1) en KOTLIN no hay "new"
+    val sumaDos = Suma(null,1)
+    val sumaTres = Suma(1,null)
+    val sumaCuatro = Suma(null,null)
+    sumaUno.sumar()
+    sumaDos.sumar()
+    sumaTres.sumar()
+    sumaCuatro.sumar()
+    println(Suma.pi)
+    println(Suma.elevarAlCuadrado(2))
+    println(Suma.historialSumas)
 
+
+
+
+    // Arreglos
+    // Estaticos
+    val arregloEstatico: Array<Int> = arrayOf<Int>(1,2,3)
+    println(arregloEstatico);
+    // Dinamicos
+    val arregloDinamico: ArrayList<Int> = arrayListOf<Int>(
+        1,2,3,4,5,6,7,8,9,10
+    )
+    println(arregloDinamico)
+    arregloDinamico.add(11)
+    arregloDinamico.add(12)
+    println(arregloDinamico)
 }
 
 // void -> Unit
@@ -125,6 +152,29 @@ class Suma( // Constructor primario
         this.soyPublicoExplicito
         soyPublicoImplicito // this. OPCIONAL (propiedades, metodos)
     }
+
+    constructor( // Constructor secundario
+        uno:Int?,
+        dos:Int
+    ):this(
+        if(uno== null) 0 else uno,
+        dos
+    )
+    constructor( // Constructor tercero
+        uno:Int,
+        dos:Int?
+    ):this(
+        uno,
+        if(dos== null) 0 else dos,
+    )
+
+    constructor( // Constructor cuarto
+        uno:Int?,
+        dos:Int?
+    ):this(
+        if(uno== null) 0 else uno,
+        if(dos== null) 0 else dos,
+    )
     // public fun sumar()Int{ (Modificar "public" es OPCIONAL
     fun sumar():Int{
         val total = numeroUno + numeroDos
@@ -135,6 +185,7 @@ class Suma( // Constructor primario
     companion object{ // Comparte entre todas las instancias, similar al Static
         // funciones y variables
         val pi = 3.14
+        var texto = "Mi barquito trae..."
         fun elevarAlCuadrado(num:Int):Int{
             return num * num
         }
