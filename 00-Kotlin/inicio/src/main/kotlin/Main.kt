@@ -75,6 +75,29 @@ fun main(){
     arregloDinamico.add(11)
     arregloDinamico.add(12)
     println(arregloDinamico)
+
+    // FOR EACH = > Unit
+    // Iterar un arreglo
+    val respuestaForEach: Unit = arregloDinamico
+        .forEach { valorActual: Int -> // - > = >
+            println("Valor actual: ${valorActual}");
+        }
+    // "it" (en ingles "eso") significa el elemento iterado
+    arregloDinamico.forEach{ println("Valor Actual (it): ${it}")}
+
+    // MAP -> MUTA(Modifica cambia) el arreglo
+    // 1) Enviamos el nuevo valor de la iteracion
+    // 2) Nos devuelve un NUEVO ARREGLO con valores
+    // de las iteraciones
+    val respuestaMap: List<Double> = arregloDinamico
+        .map { valorActual: Int ->
+            return@map valorActual.toDouble() + 100.00
+        }
+    println(respuestaMap)
+    val respuestaMapDos = arregloDinamico.map{ it + 15 }
+
+
+
 }
 
 // void -> Unit
