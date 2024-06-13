@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">2024ASWGR2VAES</string>
+    <string name="saludo">Hello World</string>
+
 </resources>
