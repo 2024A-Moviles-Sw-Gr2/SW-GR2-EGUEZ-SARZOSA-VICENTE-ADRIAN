@@ -31,7 +31,9 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCZnHvMtkadW64vde1xUHNfG2xWw6awITs" />
-
+        <activity
+            android:name=".HFirebaseUIAuth"
+            android:exported="false" />
         <activity
             android:name=".GoogleMapsInicio"
             android:exported="false"
